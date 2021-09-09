@@ -10,7 +10,16 @@
                 id="defaultHttpEndpoint" host="*" />
   <!-- end::httpEndpoint[] -->
   
+  <!--
+CWWKZ0013E: It is not possible to start two applications called {0} followed by unexpected security behavior and error messages such as CWWKS9104A.
+This error occurs when you specify your application in both the server.xml by using the application element and in the dropins folder. 
+As a result, the application is attempted to be installed twice and the security configuration in the server.xml file might or might not take effect. 
+To fix this problem, you must remove your application from the dropins folder and copy it to another directory. If you must leave it in the dropins folder, 
+you must disable the application monitoring by using the following code in your server.xml file:
+<applicationMonitor dropinsEnabled="false"/>
+ -->
+  <applicationMonitor dropinsEnabled="false"/>
   <!-- tag::webApplication[] -->
-  <webApplication location="guide-rest-intro.war" contextRoot="${app.context.root}"/>
+    <webApplication location="guide-rest-intro.war" contextRoot="${app.context.root}"/>
   <!-- end::webApplication[] -->
 </server>
