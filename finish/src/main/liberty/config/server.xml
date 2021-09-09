@@ -18,8 +18,10 @@ To fix this problem, you must remove your application from the dropins folder an
 you must disable the application monitoring by using the following code in your server.xml file:
 <applicationMonitor dropinsEnabled="false"/>
  -->
-  <applicationMonitor dropinsEnabled="false"/>
+  <applicationMonitor dropinsEnabled="true"/>
   <!-- tag::webApplication[] -->
+  <!--
     <webApplication location="guide-rest-intro.war" contextRoot="${app.context.root}"/>
+ -->
   <!-- end::webApplication[] -->
 </server>
